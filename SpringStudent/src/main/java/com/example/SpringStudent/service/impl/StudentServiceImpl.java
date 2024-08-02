@@ -27,12 +27,13 @@ public class StudentServiceImpl  implements StudentService {
     }
 
     @Override
-    public void deleteStudent(Student student) {
-        repository.delete(student);
+    public void deleteStudent(String email) {
+        repository.deleteStudentByEmail(email);
     }
 
     @Override
     public Student findByEmail(String email) {
-        return null;
+        return repository.findStudentByEmail(email);
     }
+
 }

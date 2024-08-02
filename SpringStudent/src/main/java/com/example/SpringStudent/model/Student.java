@@ -8,14 +8,14 @@ import lombok.Data;
 @Table(name="students")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id_student;
     @Column(name = "firstname")
     private String name;
     @Column(name = "lastname")
     private String surname;
+    @Column(name ="age")
     private int age;
-    @Column(unique = true)
+    @Column(name ="email", unique = true)
     private String email;
-
 }

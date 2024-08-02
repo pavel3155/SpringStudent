@@ -4,7 +4,6 @@ import com.example.SpringStudent.model.Student;
 import com.example.SpringStudent.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -24,6 +23,10 @@ public class StudentController {
     @GetMapping("/{email}")
     public Student findByEmail (@PathVariable String email){
         return service.findByEmail(email);
+    }
+    @PutMapping("/update")
+    public Student studentUpdate(@RequestBody Student student){
+        return service.updateStudent(student);
     }
 
 
